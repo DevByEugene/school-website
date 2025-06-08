@@ -76,49 +76,93 @@ body {
 }
 
 /* Navigation - Enhanced */
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  align-items: center;
-}
+/* Add this to your existing CSS inside the @media (max-width: 768px) section */
 
-.main-nav ul li a {
-  color: #004080;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 16px;
-  padding: 10px 15px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.main-nav ul li a:hover {
-  background-color: #004080;
-  color: white;
-  transform: translateY(-1px);
-}
-
-.main-nav ul li a.active {
-  background-color: #ffcc00;
-  color: #004080;
-}
-
-/* Mobile Menu Button */
-.mobile-menu-btn {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  padding: 5px;
-}
-
-.mobile-menu-btn span {
-  width: 25px;
-  height: 3px;
-  background-color: #004080;
-  margin: 3px 0;
-  transition: 0.3s;
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+  
+  .main-nav.active {
+    display: block;
+  }
+  
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 20px 0;
+  }
+  
+  .main-nav li {
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .main-nav a {
+    display: block;
+    padding: 15px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .main-nav a:hover {
+    background-color: #f8f9fa;
+    color: #004080;
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
+  }
+  
+  /* Animate hamburger menu */
+  .mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+  
+  .hero-overlay h1 {
+    font-size: 2.5em;
+  }
+  
+  .hero-overlay p {
+    font-size: 1.1em;
+  }
+  
+  .header-container {
+    padding: 1rem;
+  }
+  
+  .logo-showcase {
+    padding: 40px 15px;
+  }
+  
+  .logo-showcase h2 {
+    font-size: 1.8em;
+  }
+  
+  .logo-display img {
+    max-width: 280px;
+  }
+  
+  .instagram-btn {
+    padding: 14px 28px;
+    font-size: 1em;
+  }
 }
 
 /* Slider */
