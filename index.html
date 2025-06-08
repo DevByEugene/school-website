@@ -1,4 +1,3 @@
-<!-- Rebuild trigger: 2025-06-08 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,16 +43,28 @@ body {
 }
 
 .school-logo {
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, #004080, #0066cc);
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-weight: bold;
-  font-size: 1.2em;
+  box-shadow: 0 6px 20px rgba(0, 64, 128, 0.3);
+  border: 3px solid #ffffff;
+  transition: all 0.3s ease;
+}
+
+.school-logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 64, 128, 0.3);
+}
+
+.school-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .school-name {
@@ -359,6 +370,11 @@ body {
     padding: 1rem;
   }
   
+  .school-logo {
+    width: 65px;
+    height: 65px;
+  }
+  
   .logo-showcase {
     padding: 40px 15px;
   }
@@ -385,7 +401,9 @@ body {
   <header class="top-header">
     <div class="header-container">
       <div class="logo-section">
-        <div class="school-logo">CF</div>
+        <div class="school-logo">
+          <img src="logo.jpg" alt="Crestfield Logo">
+        </div>
         <div class="logo-text">
           <div class="school-name">Crestfield</div>
           <div class="school-tagline">Tuition & Homeschool</div>
@@ -448,6 +466,33 @@ body {
       </div>
     </div>
   </section>
+
+  <script>
+    // Slider functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slides');
+    
+    function showSlide(n) {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (n + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+    
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+    
+    // Auto-advance slides every 5 seconds
+    setInterval(nextSlide, 5000);
+    
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mainNav = document.querySelector('.main-nav');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>

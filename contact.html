@@ -5,92 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us - Crestfield Tuition and Homeschool</title>
   <style>
-    /* Keep your existing navbar styles intact */
-    .top-header {
-      background: linear-gradient(135deg, #004080, #0066cc);
-      padding: 15px 0;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-    }
-
-    .header-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .logo-section {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .school-logo {
-      background: white;
-      color: #004080;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-
-    .logo-text .school-name {
-      color: white;
-      font-size: 1.5em;
-      font-weight: bold;
-    }
-
-    .logo-text .school-tagline {
-      color: rgba(255,255,255,0.9);
-      font-size: 0.9em;
-    }
-
-    .main-nav ul {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      gap: 30px;
-    }
-
-    .main-nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    .main-nav a:hover,
-    .main-nav a.active {
-      color: #ffd700;
-    }
-
-    .mobile-menu-btn {
-      display: none;
-      flex-direction: column;
-      gap: 4px;
-      cursor: pointer;
-    }
-
-    .mobile-menu-btn span {
-      width: 25px;
-      height: 3px;
-      background: white;
-      border-radius: 2px;
-    }
-
-    /* Body and general styling */
+    /* Updated navbar styles to match about.html */
     * {
       margin: 0;
       padding: 0;
@@ -103,6 +18,98 @@
       color: #333;
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
       min-height: 100vh;
+    }
+
+    .top-header {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .school-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(0, 64, 128, 0.3);
+      border: 3px solid #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .school-logo:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 64, 128, 0.4);
+    }
+
+    .school-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .school-name {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #004080;
+    }
+
+    .school-tagline {
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    .main-nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: #004080;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .mobile-menu-btn span {
+      width: 25px;
+      height: 3px;
+      background: #004080;
+      margin: 3px 0;
+      transition: 0.3s;
     }
 
     .section {
@@ -441,27 +448,30 @@
 
     /* Footer */
     footer {
-      background: #004080;
+      background: #333;
       color: white;
       text-align: center;
-      padding: 30px 20px;
-      margin-top: 60px;
-    }
-
-    footer p {
-      margin: 0;
-      font-size: 0.95em;
-      opacity: 0.9;
+      padding: 2rem;
+      margin-top: 50px;
     }
 
     /* Responsive Design */
     @media (max-width: 768px) {
+      .main-nav {
+        display: none;
+      }
+      
       .mobile-menu-btn {
         display: flex;
       }
-
-      .main-nav {
-        display: none;
+      
+      .header-container {
+        padding: 1rem;
+      }
+      
+      .school-logo {
+        width: 65px;
+        height: 65px;
       }
 
       .contact-grid {
@@ -569,7 +579,9 @@
   <header class="top-header">
     <div class="header-container">
       <div class="logo-section">
-        <div class="school-logo">CF</div>
+        <div class="school-logo">
+          <img src="logo.jpg" alt="Crestfield Logo">
+        </div>
         <div class="logo-text">
           <div class="school-name">Crestfield</div>
           <div class="school-tagline">Tuition & Homeschool</div>
@@ -734,6 +746,14 @@
   </footer>
 
   <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mainNav = document.querySelector('.main-nav');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+    });
+
     // Add some interactive effects
     document.addEventListener('DOMContentLoaded', function() {
       // Form validation and interaction
