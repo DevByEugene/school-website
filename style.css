@@ -1,0 +1,363 @@
+General Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* Header Styling - Improved */
+.top-header {
+  background-color: #ffffff;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #004080;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Section - Enhanced */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.school-logo {
+  height: 65px;
+  width: 65px;
+  background: linear-gradient(135deg, #004080, #0066cc);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  box-shadow: 0 4px 12px rgba(0, 64, 128, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.school-logo:hover {
+  transform: translateY(-2px);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-text .school-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #004080;
+  line-height: 1.2;
+}
+
+.logo-text .school-tagline {
+  font-size: 12px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Navigation - Enhanced */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.main-nav ul li a {
+  color: #004080;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.main-nav ul li a:hover {
+  background-color: #004080;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.main-nav ul li a.active {
+  background-color: #ffcc00;
+  color: #004080;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.mobile-menu-btn span {
+  width: 25px;
+  height: 3px;
+  background-color: #004080;
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* Slider */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  overflow: hidden;
+}
+
+.slides {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.slides.active {
+  display: block;
+}
+
+.slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fade {
+  animation: fadeEffect 1.5s ease-in-out;
+}
+
+@keyframes fadeEffect {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* HERO OVERLAY on Slider */
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 10;
+  background: linear-gradient(135deg, rgba(0, 64, 128, 0.9), rgba(0, 102, 204, 0.8));
+  padding: 50px 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.hero-overlay h1 {
+  font-size: 3em;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.hero-overlay p {
+  font-size: 1.3em;
+  margin-bottom: 25px;
+  opacity: 0.95;
+}
+
+.enroll-btn {
+  padding: 15px 35px;
+  background: linear-gradient(135deg, #ffcc00, #ffd700);
+  color: #004080;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
+}
+
+.enroll-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255, 204, 0, 0.6);
+}
+
+/* Section Styling */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  color: #004080;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+.section p {
+  font-size: 1.1em;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* PROGRAM CARDS - SINGLE ROW LAYOUT */
+.programs-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 25px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+.program {
+  flex: 1;
+  min-width: 280px;
+  max-width: 300px;
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.program:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: #004080;
+}
+
+.program h3 {
+  color: #004080;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.program p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.program a {
+  color: #004080;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid #004080;
+  padding: 12px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.program a:hover {
+  background: #004080;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.alt-section {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #222, #333);
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 20px;
+  }
+
+  .logo-text .school-name {
+    font-size: 18px;
+  }
+
+  .logo-text .school-tagline {
+    font-size: 10px;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .hero-overlay {
+    padding: 30px 20px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2.2em;
+  }
+
+  .hero-overlay p {
+    font-size: 1.1em;
+  }
+
+  .programs-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .program {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-section {
+    gap: 10px;
+  }
+
+  .school-logo {
+    height: 50px;
+    width: 50px;
+    font-size: 20px;
+  }
+
+  .logo-text .school-name {
+    font-size: 16px;
+  }
+}

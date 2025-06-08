@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Crestfield Tuition and Homeschool</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Hero Section */
+    .about-hero {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      overflow: hidden;
+    }
+
+    .about-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .about-hero .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .overlay h2 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    .overlay p {
+      font-size: 1.2em;
+      max-width: 800px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .overlay h2 {
+        font-size: 2em;
+      }
+
+      .overlay p {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="top-header">
+    <div class="header-container">
+      <div class="logo-section">
+        <div class="school-logo">CF</div>
+        <div class="logo-text">
+          <div class="school-name">Crestfield</div>
+          <div class="school-tagline">Tuition & Homeschool</div>
+        </div>
+      </div>
+      
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="school.html">School</a></li>
+          <li><a href="admission.html">Admission</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Image with Overlay Text -->
+  <section class="about-hero">
+    <img src="about.jpg" alt="About Crestfield" />
+    <div class="overlay">
+      <h2>About Crestfield</h2>
+      <p>
+        Welcome to Crestfield – Where we educate and nurture future leaders through a blend of academic excellence and character development...
+      </p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" style="padding-top: 60px;">
+    <div style="max-width: 900px; margin: 0 auto; text-align: left;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px;">
+        <div>
+          <h3 style="color: #004080; margin-bottom: 15px; font-size: 1.5em;">Our Mission</h3>
+          <p style="color: #666; line-height: 1.7;">To provide world-class education that inspires and empowers students to become confident, creative, and compassionate leaders who make a positive impact on their communities and the world.</p>
+        </div>
+        
+        <div>
+          <h3 style="color: #004080; margin-bottom: 15px; font-size: 1.5em;">Our Vision</h3>
+          <p style="color: #666; line-height: 1.7;">To be the leading educational institution that transforms lives through innovative teaching methods, personalized learning experiences, and character development programs.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 50px;">
+        <h3 style="color: #004080; margin-bottom: 20px; font-size: 1.5em; text-align: center;">Why Choose Crestfield?</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 30px;">
+          <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-left: 4px solid #004080;">
+            <h4 style="color: #004080; margin-bottom: 10px;">Personalized Learning</h4>
+            <p style="color: #666; font-size: 0.95em;">Every student receives individual attention and customized learning plans to maximize their potential.</p>
+          </div>
+          
+          <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-left: 4px solid #004080;">
+            <h4 style="color: #004080; margin-bottom: 10px;">International Curriculum</h4>
+            <p style="color: #666; font-size: 0.95em;">Cambridge-certified programs that are recognized and respected by universities worldwide.</p>
+          </div>
+          
+          <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-left: 4px solid #004080;">
+            <h4 style="color: #004080; margin-bottom: 10px;">Expert Tutors</h4>
+            <p style="color: #666; font-size: 0.95em;">Highly qualified and experienced educators dedicated to student success and academic excellence.</p>
+          </div>
+          
+          <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-left: 4px solid #004080;">
+            <h4 style="color: #004080; margin-bottom: 10px;">Flexible Learning</h4>
+            <p style="color: #666; font-size: 0.95em;">Online and hybrid learning options that adapt to your schedule and learning preferences.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Crestfield Tuition and Homeschool. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
