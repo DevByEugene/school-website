@@ -20,15 +20,24 @@ function showSlides() {
   setTimeout(showSlides, 4000); // Change image every 4 seconds
 }
 
-// Mobile menu toggle - THIS WAS MISSING!
+// Fixed Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function() {
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-  const mainNav = document.querySelector('.main-nav');
+  const mobileNav = document.querySelector('.mobile-nav'); // Changed from .main-nav to .mobile-nav
   
-  if (mobileMenuBtn && mainNav) {
+  if (mobileMenuBtn && mobileNav) {
     mobileMenuBtn.addEventListener('click', function() {
-      mainNav.classList.toggle('active');
+      mobileNav.classList.toggle('active'); // Now toggling the correct element
       mobileMenuBtn.classList.toggle('active');
+    });
+    
+    // Optional: Close mobile menu when clicking on a link
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        mobileNav.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+      });
     });
   }
 });
