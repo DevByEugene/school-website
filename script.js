@@ -77,3 +77,71 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+// Blog Search and Filter Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('searchInput');
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    const blogCards = document.querySelectorAll('.blog-card');
+    
+    let currentCategory = 'all';
+    let currentSearch = '';
+
+    // Search functionality
+    searchInput.addEventListener('input', function() {
+        currentSearch = this.value.toLowerCase().trim();
+        filterPosts();
+    });
+
+    // Category filter functionality
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Update current category
+            currentCategory = this.getAttribute('data-category');
+            
+            // Filter posts
+            filterPosts();
+        });
+    });
+
+    function filterPosts() {
+        blogCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            const cardTitle = card.querySelector('.blog-title').textContent.toLowerCase();
+            const cardExcerpt = card.querySelector('.blog-excerpt').textContent.toLowerCase();
+            const cardCategoryText = card.querySelector('.blog-category').textContent.toLowerCase();
+            
+            // Check category match
+            const categoryMatch = currentCategory === 'all' || cardCategory === currentCategory;
+            
+            // Check search match
+            const searchMatch = currentSearch === '' || 
+                               cardTitle.includes(currentSearch) || 
+                               cardExcerpt.includes(currentSearch) ||
+                               cardCategoryText.includes(currentSearch);
+            
+            // Show or hide card
+            if (categoryMatch && searchMatch) {
+                card.style.display = 'block';
+                card.style.animation = 'fadeIn 0.3s ease-in';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+});
+
+// Add CSS for smooth animations (add this to your stylesheet)
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+`;
+document.head.appendChild(style);

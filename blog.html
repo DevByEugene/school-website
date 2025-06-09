@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education Blog - Crestfield Tuition & Homeschool</title>
+  <style>
+    /* Updated navbar styles to match about.html */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      min-height: 100vh;
+    }
+
+    .top-header {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .school-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(0, 64, 128, 0.3);
+      border: 3px solid #ffffff;
+      transition: all 0.3s ease;
+      background: linear-gradient(135deg, #004080, #0066cc);
+      color: white;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .school-logo:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 64, 128, 0.4);
+    }
+
+    .school-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .school-name {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #004080;
+    }
+
+    .school-tagline {
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    .main-nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: #004080;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .mobile-menu-btn span {
+      width: 25px;
+      height: 3px;
+      background: #004080;
+      margin: 3px 0;
+      transition: 0.3s;
+    }
+
+    /* Blog Section */
+    .blog-section {
+      padding: 140px 20px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .blog-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .blog-header h1 {
+      font-size: 3em;
+      color: #004080;
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .blog-header p {
+      font-size: 1.2em;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* Search and Filter Bar */
+    .blog-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 50px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .search-box {
+      flex: 1;
+      max-width: 400px;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 15px 50px 15px 20px;
+      border: 2px solid #e9ecef;
+      border-radius: 25px;
+      font-size: 16px;
+      background: white;
+      transition: all 0.3s ease;
+    }
+
+    .search-box input:focus {
+      outline: none;
+      border-color: #004080;
+      box-shadow: 0 0 0 3px rgba(0,64,128,0.1);
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #666;
+      font-size: 18px;
+    }
+
+    .category-filter {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .category-btn {
+      padding: 10px 20px;
+      border: 2px solid #e9ecef;
+      background: white;
+      color: #666;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .category-btn:hover,
+    .category-btn.active {
+      background: #004080;
+      color: white;
+      border-color: #004080;
+    }
+
+    /* Blog Grid */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .blog-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    }
+
+    .blog-image {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, #004080, #0066cc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3em;
+      font-weight: bold;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blog-image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.1) 75%), 
+                  linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.1) 75%);
+      background-size: 20px 20px;
+      background-position: 0 0, 10px 10px;
+    }
+
+    .blog-content {
+      padding: 30px;
+    }
+
+    .blog-meta {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    .blog-category {
+      background: #e3f2fd;
+      color: #004080;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-weight: 600;
+      font-size: 0.85em;
+    }
+
+    .blog-date {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .blog-title {
+      font-size: 1.4em;
+      font-weight: 700;
+      color: #004080;
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+
+    .blog-excerpt {
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #004080;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .read-more:hover {
+      color: #0066cc;
+      transform: translateX(5px);
+    }
+
+    /* Featured Post */
+    .featured-post {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-bottom: 20px;
+    }
+
+    .featured-post .blog-image {
+      height: 300px;
+      border-radius: 20px 0 0 20px;
+    }
+
+    .featured-post .blog-content {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-post .blog-title {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    .featured-post .blog-excerpt {
+      font-size: 1.1em;
+      margin-bottom: 25px;
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: #ff6b35;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9em;
+      z-index: 2;
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 60px;
+    }
+
+    .pagination button {
+      padding: 12px 20px;
+      border: 2px solid #e9ecef;
+      background: white;
+      color: #666;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .pagination button:hover,
+    .pagination button.active {
+      background: #004080;
+      color: white;
+      border-color: #004080;
+    }
+
+    .pagination button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 25px;
+      right: 25px;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      animation: bounce 2s infinite;
+      border: none;
+      outline: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+      color: white;
+      text-decoration: none;
+    }
+
+    .whatsapp-icon {
+      width: 32px;
+      height: 32px;
+      fill: currentColor;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .whatsapp-float::before {
+      content: "Chat with us on WhatsApp";
+      position: absolute;
+      right: 70px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      text-align: center;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 14px;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .whatsapp-float::after {
+      content: "";
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 6px solid transparent;
+      border-left-color: rgba(0, 0, 0, 0.8);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp-float:hover::before,
+    .whatsapp-float:hover::after {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Footer */
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .main-nav {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: flex;
+      }
+      
+      .header-container {
+        padding: 1rem;
+      }
+      
+      .school-logo {
+        width: 65px;
+        height: 65px;
+      }
+
+      .blog-header h1 {
+        font-size: 2.2em;
+      }
+
+      .blog-controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .search-box {
+        max-width: 100%;
+      }
+
+      .category-filter {
+        justify-content: center;
+      }
+
+      .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .featured-post {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-post .blog-image {
+        border-radius: 20px 20px 0 0;
+        height: 200px;
+      }
+
+      .featured-post .blog-content {
+        padding: 30px 25px;
+      }
+
+      .blog-section {
+        padding: 120px 15px 60px;
+      }
+
+      .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+      }
+
+      .whatsapp-icon {
+        width: 28px;
+        height: 28px;
+      }
+
+      .whatsapp-float::before,
+      .whatsapp-float::after {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .blog-header h1 {
+        font-size: 1.8em;
+      }
+
+      .blog-content {
+        padding: 25px 20px;
+      }
+
+      .category-btn {
+        font-size: 0.9em;
+        padding: 8px 16px;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .blog-card {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    .blog-card:nth-child(2) { animation-delay: 0.1s; }
+    .blog-card:nth-child(3) { animation-delay: 0.2s; }
+    .blog-card:nth-child(4) { animation-delay: 0.3s; }
+    .blog-card:nth-child(5) { animation-delay: 0.4s; }
+    .blog-card:nth-child(6) { animation-delay: 0.5s; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="top-header">
+    <div class="header-container">
+      <div class="logo-section">
+        <div class="school-logo">
+          <img src="logo.jpg" alt="Crestfield Logo">
+        </div>
+        <div class="logo-text">
+          <div class="school-name">Crestfield</div>
+          <div class="school-tagline">Tuition & Homeschool</div>
+        </div>
+      </div>
+      
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="school.html">School</a></li>
+          <li><a href="admission.html">Admission</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
+        </ul>
+      </nav>
+      
+      <div class="mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- BLOG SECTION -->
+  <section class="blog-section">
+    <div class="blog-header">
+      <h1>Education Blog</h1>
+      <p>Discover insights, tips, and trends in education, homeschooling, and academic excellence. Stay informed with our latest articles and expert advice.</p>
+    </div>
+
+    <!-- Search and Filter Controls -->
+    <div class="blog-controls">
+      <div class="search-box">
+        <input type="text" placeholder="Search articles..." id="searchInput">
+        <span class="search-icon">🔍</span>
+      </div>
+      
+      <div class="category-filter">
+        <button class="category-btn active" data-category="all">All Posts</button>
+        <button class="category-btn" data-category="homeschool">Homeschooling</button>
+        <button class="category-btn" data-category="study-tips">Study Tips</button>
+        <button class="category-btn" data-category="parenting">Parenting</button>
+        <button class="category-btn" data-category="technology">Technology</button>
+      </div>
+    </div>
+
+    <!-- Blog Grid -->
+    <div class="blog-grid" id="blogGrid">
+      
+      <!-- Featured Post -->
+      <article class="blog-card featured-post" data-category="homeschool">
+        <div class="blog-image">
+          <div class="featured-badge">Featured</div>
+          📚
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-category">Homeschooling</span>
+            <span class="blog-date">📅 June 5, 2025</span>
+          </div>
+          <h2 class="blog-title">The Complete Guide to Starting Your Homeschool Journey</h2>
+          <p class="blog-excerpt">Embarking on homeschooling can feel overwhelming, but with the right preparation and mindset, it becomes an incredibly rewarding journey. This comprehensive guide covers everything from curriculum selection to creating effective learning environments at home.</p>
+        
+        </div>
+      </article>
+
+      <!-- Regular Blog Posts -->
+      <article class="blog-card" data-category="study-tips">
+        <div class="blog-image">🧠</div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-category">Study Tips</span>
+            <span class="blog-date">📅 June 3, 2025</span>
+          </div>
+          <h3 class="blog-title">10 Proven Memory Techniques for Better Learning</h3>
+          <p class="blog-excerpt">Discover scientifically-backed memory techniques that can transform how students retain and recall information. From the method of loci to spaced repetition.</p>
+         
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="technology">
+        <div class="blog-image">💻</div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-category">Technology</span>
+            <span class="blog-date">📅 June 1, 2025</span>
+          </div>
+          <h3 class="blog-title">Digital Tools That Enhance Remote Learning</h3>
+          <p class="blog-excerpt">Explore the latest educational technology tools that make online learning more engaging and effective for students of all ages.</p>
+          
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="parenting">
+        <div class="blog-image">👨‍👩‍👧‍👦</div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-category">Parenting</span>
+            <span class="blog-date">📅 May 29, 2025</span>
+          </div>
+          <h3 class="blog-title">Supporting Your Child's Learning at Home</h3>
+          <p class="blog-excerpt">Practical strategies for parents to create a supportive learning environment and maintain motivation during challenging academic periods.</p>
+          
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="study-tips">
+        <div class="blog-image">⏰</div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-category">Study Tips</span>
+            <span class="blog-date">📅 May 27, 2025</span>
+          </div>
+          <h3 class="blog-title">Time Management Skills for Academic Success</h3>
+          <p class="blog-excerpt">Master the art of time management with proven techniques that help students balance academics, extracurriculars, and personal time effectively.</p>
+          
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="homeschool">
+        <div class="blog-image">🏠</div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-category">Homeschooling</span>
+            <span class="blog-date">📅 May 25, 2025</span>
+          </div>
+          <h3 class="blog-title">Creating Effective Learning Spaces at Home</h3>
+          <p class="blog-excerpt">Design tips and strategies for setting up dedicated learning areas that promote focus, creativity, and academic achievement in your home.</p>
+          
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="technology">
+        <div class="blog-image">📱</div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-category">Technology</span>
+            <span class="blog-date">📅 May45, 2025</span>
+          </div>
+          <h3 class="blog-title">Educational Apps That Make Learning Fun</h3>
+          <p class="blog-excerpt">A curated list of the best educational apps for different age groups, featuring interactive content that engages students while building knowledge.</p>
+          
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <button disabled>← Previous</button>
+      <button class="active">1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>Next →</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Crestfield Tuition & Homeschool. All rights reserved.</p>
+  </footer>
+
+ <!-- WhatsApp Floating Button - FIXED with proper SVG icon -->
+  <a href="https://wa.me/254758219179?text=Hello%20Crestfield!%20I%27m%20interested%20in%20learning%20more%20about%20your%20programs." class="whatsapp-float" target="_blank">
+    <svg class="whatsapp-icon" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+    </svg>
+  </a>
+
+  <script>
+    // Category Filter Functionality
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const blogCards = document.querySelectorAll('.blog-card');
+    const searchInput = document.getElementById('searchInput');
+
+    // Category filtering
+    categoryBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        categoryBtns.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+        
+        const category = btn.dataset.category;
+        
+        blogCards.forEach(card => {
+          if (category === 'all' || card.dataset.category === category) {
+            card.style.display = 'block';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 50);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+
+    // Search functionality
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      
+      blogCards.forEach(card => {
+        const title = card.querySelector('.blog-title').textContent.toLowerCase();
+        const excerpt = card.querySelector('.blog-excerpt').textContent.toLowerCase();
+        const category = card.querySelector('.blog-category').textContent.toLowerCase();
+        
+        if (title.includes(searchTerm) || excerpt.includes(searchTerm) || category.includes(searchTerm)) {
+          card.style.display = 'block';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 50);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(20px)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 300);
+        }
+      });
+    });
+
+    // Add click handlers to blog cards
+    blogCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (!e.target.classList.contains('read-more')) {
+          const readMoreLink = card.querySelector('.read-more');
+          if (readMoreLink) {
+            // In a real implementation, this would navigate to the full article
+            console.log('Navigate to article:', card.querySelector('.blog-title').textContent);
+          }
+        }
+      });
+    });
+
+    // Mobile menu functionality (basic structure)
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mainNav = document.querySelector('.main-nav');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mainNav.classList.toggle('mobile-active');
+      mobileMenuBtn.classList.toggle('active');
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add loading animation for blog cards
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all blog cards for animation
+    blogCards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'all 0.6s ease-out';
+      observer.observe(card);
+    });
+
+    // Pagination functionality
+    const paginationBtns = document.querySelectorAll('.pagination button');
+    paginationBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (!btn.disabled && !btn.classList.contains('active')) {
+          // Remove active class from current page
+          document.querySelector('.pagination .active').classList.remove('active');
+          // Add active class to clicked page
+          if (!btn.textContent.includes('Previous') && !btn.textContent.includes('Next')) {
+            btn.classList.add('active');
+          }
+          // Scroll to top of blog section
+          document.querySelector('.blog-section').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Auto-hide search results when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.search-box')) {
+        // Reset search if needed
+      }
+    });
+
+    // Add keyboard navigation for accessibility
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        searchInput.value = '';
+        searchInput.dispatchEvent(new Event('input'));
+      }
+    });
+
+    // Dynamic year update in footer
+    const currentYear = new Date().getFullYear();
+    const footerText = document.querySelector('footer p');
+    if (footerText) {
+      footerText.innerHTML = footerText.innerHTML.replace('2025', currentYear);
+    }
+
+    // Add reading time estimation
+    blogCards.forEach(card => {
+      const excerpt = card.querySelector('.blog-excerpt').textContent;
+      const wordCount = excerpt.split(' ').length;
+      const readingTime = Math.ceil(wordCount / 200); // Average reading speed
+      
+      const meta = card.querySelector('.blog-meta');
+      const readingTimeSpan = document.createElement('span');
+      readingTimeSpan.innerHTML = `📖 ${readingTime} min read`;
+      readingTimeSpan.style.color = '#666';
+      meta.appendChild(readingTimeSpan);
+    });
+  </script>
+
+</body>
+</html>
