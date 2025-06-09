@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>Contact Us - Crestfield Tuition and Homeschool</title>
   <style>
     /* Updated navbar styles to match about.html */
@@ -311,7 +312,7 @@
       background: linear-gradient(135deg, #0066cc, #004080);
     }
 
-    /* WhatsApp Floating Button */
+    /* WhatsApp Floating Button - FIXED */
     .whatsapp-float {
       position: fixed;
       width: 60px;
@@ -332,6 +333,8 @@
       transition: all 0.3s ease;
       text-decoration: none;
       animation: bounce 2s infinite;
+      border: none;
+      outline: none;
     }
 
     .whatsapp-float:hover {
@@ -343,6 +346,18 @@
 
     .whatsapp-float:active {
       transform: scale(0.95);
+    }
+
+    .whatsapp-float:visited {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* WhatsApp SVG Icon */
+    .whatsapp-icon {
+      width: 32px;
+      height: 32px;
+      fill: currentColor;
     }
 
     @keyframes bounce {
@@ -448,11 +463,11 @@
 
     /* Footer */
     footer {
-      background: #333;
+      background: #004080;
       color: white;
       text-align: center;
-      padding: 2rem;
-      margin-top: 50px;
+      padding: 30px 20px;
+      margin-top: 60px;
     }
 
     /* Responsive Design */
@@ -494,9 +509,13 @@
       .whatsapp-float {
         width: 55px;
         height: 55px;
-        font-size: 26px;
         bottom: 20px;
         right: 20px;
+      }
+
+      .whatsapp-icon {
+        width: 28px;
+        height: 28px;
       }
 
       .whatsapp-float::before {
@@ -595,6 +614,7 @@
           <li><a href="school.html">School</a></li>
           <li><a href="admission.html">Admission</a></li>
           <li><a href="contact.html" class="active">Contact</a></li>
+           
         </ul>
       </nav>
 
@@ -606,9 +626,11 @@
     </div>
   </header>
 
-  <!-- WhatsApp Floating Button -->
+  <!-- WhatsApp Floating Button - FIXED with proper SVG icon -->
   <a href="https://wa.me/254758219179?text=Hello%20Crestfield!%20I%27m%20interested%20in%20learning%20more%20about%20your%20programs." class="whatsapp-float" target="_blank">
-    💬
+    <svg class="whatsapp-icon" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+    </svg>
   </a>
 
   <!-- Contact Section -->
@@ -618,7 +640,12 @@
     
     <!-- WhatsApp Direct Message Notice -->
     <div class="whatsapp-notice">
-      <h3>💬 Quick Chat Available!</h3>
+      <h3>
+        <svg style="width: 24px; height: 24px; fill: currentColor;" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+        </svg>
+        Quick Chat Available!
+      </h3>
       <p>For instant responses, click the WhatsApp button below to chat with us directly!</p>
     </div>
     
@@ -629,7 +656,12 @@
         <h3>Get In Touch</h3>
         
         <div class="contact-info-item">
-          <h4>💬 WhatsApp</h4>
+          <h4>
+            <svg style="width: 20px; height: 20px; fill: currentColor;" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+            </svg>
+            WhatsApp
+          </h4>
           <p>
             <a href="https://wa.me/254758219179">Click to Chat</a><br>
             <em>Fast response guaranteed!</em>
@@ -639,14 +671,14 @@
         <div class="contact-info-item">
           <h4>📧 Email</h4>
           <p>
-            <a href="mailto:info@crestfield.ac.ke">info@Hrcrestfieldschool@gmail.com</a>
+            <a href="mailto:Hrcrestfieldschool@gmail.com">Hrcrestfieldschool@gmail.com</a>
           </p>
         </div>
         
         <div class="contact-info-item">
           <h4>📞 Phone</h4>
           <p>
-            <a href="tel:+254700123456">+254 758 219179</a>
+            <a href="tel:+254758219179">+254 758 219179</a>
           </p>
         </div>
         
@@ -673,50 +705,48 @@
         </div>
       </div>
       
-      <!-- Contact Form -->
-      <div class="contact-card">
-        <h3>Send Us a Message</h3>
-        
-        <form class="contact-form" action="https://formspree.io/f/mgvyobwy" method="POST">
-          <div class="form-group">
-            <label>Full Name *</label>
-            <input type="text" name="name" required placeholder="Enter your full name">
-          </div>
-          
-          <div class="form-group">
-            <label>Email Address *</label>
-            <input type="email" name="email" required placeholder="Enter your email">
-          </div>
-          
-          <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" name="phone" placeholder="Enter your phone number">
-          </div>
-          
-          <div class="form-group">
-            <label>Program of Interest</label>
-            <select name="program">
-              <option value="">Select a program</option>
-              <option value="primary">Primary Level (Cambridge)</option>
-              <option value="lower-secondary">Lower Secondary (Cambridge)</option>
-              <option value="igcse">IGCSE (Cambridge)</option>
-              <option value="a-levels">A-Levels (Cambridge & Edexcel)</option>
-              <option value="general">General Inquiry</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label>Message *</label>
-            <textarea name="message" required placeholder="Tell us how we can help you..."></textarea>
-          </div>
-          
-          <button type="submit" class="submit-btn">
-            Send Message
-          </button>
-        </form>
-      </div>
-    </div>
+     <!-- Contact Form -->       
+<div class="contact-card">         
+  <h3>Send Us a Message</h3>                  
+  <form class="contact-form" action="https://formspree.io/f/xpwrplaa" method="POST">           
+    <div class="form-group">             
+      <label>Full Name *</label>             
+      <input type="text" name="name" required placeholder="Enter your full name">           
+    </div>                      
     
+    <div class="form-group">             
+      <label>Email Address *</label>             
+      <input type="email" name="email" required placeholder="Enter your email">           
+    </div>                      
+    
+    <div class="form-group">             
+      <label>Phone Number</label>             
+      <input type="tel" name="phone" placeholder="Enter your phone number">           
+    </div>                      
+    
+    <div class="form-group">             
+      <label>Program of Interest</label>             
+      <select name="program">               
+        <option value="">Select a program</option>               
+        <option value="primary">Primary Level (Cambridge)</option>               
+        <option value="lower-secondary">Lower Secondary (Cambridge)</option>               
+        <option value="igcse">IGCSE (Cambridge)</option>               
+        <option value="a-levels">A-Levels (Cambridge & Edexcel)</option>               
+        <option value="general">General Inquiry</option>             
+      </select>           
+    </div>                      
+    
+    <div class="form-group">             
+      <label>Message *</label>             
+      <textarea name="message" required placeholder="Tell us how we can help you..."></textarea>           
+    </div>                      
+    
+    <button type="submit" class="submit-btn">             
+      Send Message           
+    </button>         
+  </form>       
+</div>
+    </div>
     <!-- FAQ Section -->
     <div class="faq-section">
       <h3>Frequently Asked Questions</h3>

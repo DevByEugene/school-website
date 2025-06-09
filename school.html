@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>School Programs - Crestfield Tuition and Homeschool</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
   <style>
     * {
       margin: 0;
@@ -317,6 +318,129 @@
       font-size: 0.9em;
     }
 
+    /* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 25px;
+  right: 25px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  z-index: 1000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  animation: bounceWhatsapp 2s infinite;
+}
+
+/* WhatsApp Floating Button - FIXED */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 25px;
+      right: 25px;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      animation: bounce 2s infinite;
+      border: none;
+      outline: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+      color: white;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:active {
+      transform: scale(0.95);
+    }
+
+    .whatsapp-float:visited {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* WhatsApp SVG Icon */
+    .whatsapp-icon {
+      width: 32px;
+      height: 32px;
+      fill: currentColor;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+
+    /* Tooltip for WhatsApp button */
+    .whatsapp-float::before {
+      content: "Chat with us on WhatsApp";
+      position: absolute;
+      right: 70px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      text-align: center;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 14px;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .whatsapp-float::after {
+      content: "";
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 6px solid transparent;
+      border-left-color: rgba(0, 0, 0, 0.8);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp-float:hover::before,
+    .whatsapp-float:hover::after {
+      opacity: 1;
+      visibility: visible;
+    }
+
+
     /* Responsive Design */
     @media (max-width: 768px) {
       .main-nav {
@@ -428,6 +552,7 @@
           <li><a href="school.html" class="active">School</a></li>
           <li><a href="admission.html">Admission</a></li>
           <li><a href="contact.html">Contact</a></li>
+       
         </ul>
       </nav>
 
@@ -439,6 +564,13 @@
     </div>
   </header>
 
+  <!-- WhatsApp Floating Button - FIXED with proper SVG icon -->
+  <a href="https://wa.me/254758219179?text=Hello%20Crestfield!%20I%27m%20interested%20in%20learning%20more%20about%20your%20programs." class="whatsapp-float" target="_blank">
+    <svg class="whatsapp-icon" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+    </svg>
+  </a>
+
   <!-- School Programs -->
   <section class="section" style="padding-top: 120px;">
     <h2>Our School Programs</h2>
@@ -446,8 +578,8 @@
 
     <div class="programs-wrapper" style="flex-direction: column; gap: 40px; align-items: center;">
       <div class="program" style="max-width: 800px; width: 100%;">
-        <h3>Primary Level (Cambridge)</h3>
-        <p>At Crestfield, we offer a comprehensive Cambridge Primary program tailored specifically for students in Grades 4 to 6. This program lays a strong foundation in core subjects such as English, Mathematics, and Science. We emphasize not only academic excellence but also foster curiosity, creativity, and critical thinking to nurture lifelong learners.</p>
+        <h3>Primary Level (Cambridge, Pearson & Edexcel)</h3>
+        <p>At Crestfield, we offer a comprehensive Primary program tailored specifically for students in Grades 1 to 6. This program lays a strong foundation in core subjects such as English, Mathematics, and Science. We emphasize not only academic excellence but also foster curiosity, creativity, and critical thinking to nurture lifelong learners.</p>
         
         <div style="margin-top: 20px;">
           <h4 style="color: #004080; margin-bottom: 10px;">Key Features:</h4>
@@ -463,8 +595,8 @@
       </div>
 
       <div class="program" style="max-width: 800px; width: 100%;">
-        <h3>Lower Secondary (Cambridge)</h3>
-        <p>Our Cambridge Lower Secondary curriculum is designed for students in Grades 7 to 9 and offers a broad and balanced education. The program promotes inquiry-based learning, enabling students to develop skills in problem-solving, analysis, and communication, preparing them for higher secondary education with confidence.</p>
+        <h3>Lower Secondary (Cambridge, Pearson & Edexcel)</h3>
+        <p>Our Lower Secondary curriculum is designed for students in Grades 7 to 9 and offers a broad and balanced education. The program promotes inquiry-based learning, enabling students to develop skills in problem-solving, analysis, and communication, preparing them for higher secondary education with confidence.</p>
         
         <div style="margin-top: 20px;">
           <h4 style="color: #004080; margin-bottom: 10px;">Key Features:</h4>
@@ -480,8 +612,8 @@
       </div>
 
       <div class="program" style="max-width: 800px; width: 100%;">
-        <h3>IGCSE (Cambridge)</h3>
-        <p>The two-year Cambridge IGCSE program is delivered online for students aged 16 to 18. It provides a rigorous and internationally recognized curriculum that develops knowledge, skills, and understanding through coursework and final examinations. Our expert tutors guide students through the coursework with personalized support to ensure academic success.</p>
+        <h3>IGCSE (Cambridge, Pearson & Edexcel)</h3>
+        <p>The two-year IGCSE program is delivered online for students aged 16 to 18. It provides a rigorous and internationally recognized curriculum that develops knowledge, skills, and understanding through coursework and final examinations. Our expert tutors guide students through the coursework with personalized support to ensure academic success.</p>
         
         <div style="margin-top: 20px;">
           <h4 style="color: #004080; margin-bottom: 10px;">Key Features:</h4>
@@ -498,14 +630,14 @@
       </div>
 
       <div class="program" style="max-width: 800px; width: 100%;">
-        <h3>A-Levels (Cambridge & Edexcel)</h3>
-        <p>We offer a world-class A-Level program recognized by top universities globally. Delivered over two years, the program is designed for senior students aiming for university admission worldwide. Students have access to Cambridge and Edexcel certifications, with a focus on depth of knowledge, research skills, and academic excellence.</p>
+        <h3>A-Levels (Cambridge, Pearson & Edexcel)</h3>
+        <p>We offer a world-class A-Level program recognized by top universities globally. Delivered over two years, the program is designed for senior students aiming for university admission worldwide. Students have access to Cambridge, Pearson and Edexcel certifications, with a focus on depth of knowledge, research skills, and academic excellence.</p>
         
         <div style="margin-top: 20px;">
           <h4 style="color: #004080; margin-bottom: 10px;">Key Features:</h4>
           <ul style="text-align: left; color: #666; margin-left: 20px;">
             <li>Globally recognized by top universities</li>
-            <li>Cambridge and Edexcel certification options</li>
+            <li>Cambridge, Pearson and Edexcel certification options</li>
             <li>In-depth subject knowledge development</li>
             <li>Research skills and academic excellence focus</li>
             <li>University admission preparation</li>
@@ -514,7 +646,45 @@
         
         <a href="contact.html">Get More Information</a>
       </div>
+
+      <div class="program" style="max-width: 800px; width: 100%;">
+        <h3>IB Tuitions</h3>
+        <p>We provide specialized tuition support for the International Baccalaureate (IB) program. Our expert tutors offer targeted assistance for students already enrolled in IB programs, helping them excel in their coursework and examinations. This is a tuition-only service designed to complement your existing IB education.</p>
+        
+        <div style="margin-top: 20px;">
+          <h4 style="color: #004080; margin-bottom: 10px;">Key Features:</h4>
+          <ul style="text-align: left; color: #666; margin-left: 20px;">
+            <li>Expert IB-qualified tutors</li>
+            <li>Tuition-only support service</li>
+            <li>Subject-specific assistance</li>
+            <li>Examination preparation and guidance</li>
+            <li>Flexible scheduling options</li>
+          </ul>
+        </div>
+        
+        <a href="contact.html">Get More Information</a>
+      </div>
+
+      <div class="program" style="max-width: 800px; width: 100%;">
+        <h3>CBC Tuitions</h3>
+        <p>Our CBC (Competency-Based Curriculum) tuition services provide additional support for students following the Kenyan national curriculum. We offer specialized tutoring to help students master the competency-based approach and excel in their studies. This is a tuition-only service to supplement your existing CBC education.</p>
+        
+        <div style="margin-top: 20px;">
+          <h4 style="color: #004080; margin-bottom: 10px;">Key Features:</h4>
+          <ul style="text-align: left; color: #666; margin-left: 20px;">
+            <li>CBC-experienced tutors</li>
+            <li>Tuition-only support service</li>
+            <li>Competency-based learning approach</li>
+            <li>Grade-specific curriculum support</li>
+            <li>Assessment and progress tracking</li>
+          </ul>
+        </div>
+        
+        <a href="contact.html">Get More Information</a>
+      </div>
     </div>
+        
+        
 
     <div style="margin-top: 60px; padding: 40px; background: linear-gradient(135deg, #004080, #0066cc); border-radius: 20px; color: white; text-align: center;">
       <h3 style="margin-bottom: 15px; font-size: 1.8em;">Ready to Start Your Educational Journey?</h3>
