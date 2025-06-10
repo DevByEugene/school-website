@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Education Blog - Crestfield Tuition & Homeschool</title>
+   <script src="script.js"></script>
   <style>
     /* Updated navbar styles to match about.html */
     * {
@@ -102,19 +103,7 @@
       color: #004080;
     }
 
-    .mobile-menu-btn {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .mobile-menu-btn span {
-      width: 25px;
-      height: 3px;
-      background: #004080;
-      margin: 3px 0;
-      transition: 0.3s;
-    }
+    
 
     /* Blog Section */
     .blog-section {
@@ -854,14 +843,7 @@
       });
     });
 
-    // Mobile menu functionality (basic structure)
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const mainNav = document.querySelector('.main-nav');
-
-    mobileMenuBtn.addEventListener('click', () => {
-      mainNav.classList.toggle('mobile-active');
-      mobileMenuBtn.classList.toggle('active');
-    });
+    
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
