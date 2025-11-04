@@ -4,9 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Education Blog - Crestfield Tuition & Homeschool</title>
-   <script src="script.js"></script>
   <style>
-    /* Updated navbar styles to match about.html */
     * {
       margin: 0;
       padding: 0;
@@ -103,9 +101,6 @@
       color: #004080;
     }
 
-    
-
-    /* Blog Section */
     .blog-section {
       padding: 140px 20px 80px;
       max-width: 1200px;
@@ -128,12 +123,11 @@
     .blog-header p {
       font-size: 1.2em;
       color: #666;
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto;
       line-height: 1.8;
     }
 
-    /* Search and Filter Bar */
     .blog-controls {
       display: flex;
       justify-content: space-between;
@@ -198,7 +192,6 @@
       border-color: #004080;
     }
 
-    /* Blog Grid */
     .blog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -258,6 +251,7 @@
       margin-bottom: 15px;
       font-size: 0.9em;
       color: #666;
+      flex-wrap: wrap;
     }
 
     .blog-category {
@@ -304,7 +298,6 @@
       transform: translateX(5px);
     }
 
-    /* Featured Post */
     .featured-post {
       grid-column: 1 / -1;
       display: grid;
@@ -348,7 +341,6 @@
       z-index: 2;
     }
 
-    /* Pagination */
     .pagination {
       display: flex;
       justify-content: center;
@@ -380,7 +372,6 @@
       cursor: not-allowed;
     }
 
-    /* WhatsApp Floating Button */
     .whatsapp-float {
       position: fixed;
       width: 60px;
@@ -468,7 +459,6 @@
       visibility: visible;
     }
 
-    /* Footer */
     footer {
       background: #004080;
       color: white;
@@ -477,14 +467,9 @@
       margin-top: 60px;
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
       .main-nav {
         display: none;
-      }
-      
-      .mobile-menu-btn {
-        display: flex;
       }
       
       .header-container {
@@ -553,22 +538,6 @@
       }
     }
 
-    @media (max-width: 480px) {
-      .blog-header h1 {
-        font-size: 1.8em;
-      }
-
-      .blog-content {
-        padding: 25px 20px;
-      }
-
-      .category-btn {
-        font-size: 0.9em;
-        padding: 8px 16px;
-      }
-    }
-
-    /* Animations */
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -583,17 +552,10 @@
     .blog-card {
       animation: fadeInUp 0.6s ease-out;
     }
-
-    .blog-card:nth-child(2) { animation-delay: 0.1s; }
-    .blog-card:nth-child(3) { animation-delay: 0.2s; }
-    .blog-card:nth-child(4) { animation-delay: 0.3s; }
-    .blog-card:nth-child(5) { animation-delay: 0.4s; }
-    .blog-card:nth-child(6) { animation-delay: 0.5s; }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="top-header">
     <div class="header-container">
       <div class="logo-section">
@@ -610,7 +572,7 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="school.html">School</a></li>
+          <li><a href="School programs.html">School programs</a></li>
           <li><a href="admission.html">Admission</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="blog.html" class="active">Blog</a></li>
@@ -625,14 +587,12 @@
     </div>
   </header>
 
-  <!-- BLOG SECTION -->
   <section class="blog-section">
     <div class="blog-header">
-      <h1>Education Blog</h1>
-      <p>Discover insights, tips, and trends in education, homeschooling, and academic excellence. Stay informed with our latest articles and expert advice.</p>
+      <h1>Education Insights & Resources</h1>
+      <p>Explore expert articles on modern education, homeschooling strategies, and academic excellence. Get practical tips to help your child thrive in their learning journey.</p>
     </div>
 
-    <!-- Search and Filter Controls -->
     <div class="blog-controls">
       <div class="search-box">
         <input type="text" placeholder="Search articles..." id="searchInput">
@@ -644,112 +604,125 @@
         <button class="category-btn" data-category="homeschool">Homeschooling</button>
         <button class="category-btn" data-category="study-tips">Study Tips</button>
         <button class="category-btn" data-category="parenting">Parenting</button>
-        <button class="category-btn" data-category="technology">Technology</button>
+        <button class="category-btn" data-category="curriculum">Curriculum</button>
       </div>
     </div>
 
-    <!-- Blog Grid -->
     <div class="blog-grid" id="blogGrid">
       
-      <!-- Featured Post -->
       <article class="blog-card featured-post" data-category="homeschool">
         <div class="blog-image">
           <div class="featured-badge">Featured</div>
-          📚
+          🌟
         </div>
         <div class="blog-content">
           <div class="blog-meta">
             <span class="blog-category">Homeschooling</span>
-            <span class="blog-date">📅 June 5, 2025</span>
+            <span class="blog-date">📅 November 1, 2025</span>
           </div>
-          <h2 class="blog-title">The Complete Guide to Starting Your Homeschool Journey</h2>
-          <p class="blog-excerpt">Embarking on homeschooling can feel overwhelming, but with the right preparation and mindset, it becomes an incredibly rewarding journey. This comprehensive guide covers everything from curriculum selection to creating effective learning environments at home.</p>
-        
+          <h2 class="blog-title">Why Personalized Learning Is the Future of Education</h2>
+          <p class="blog-excerpt">Traditional one-size-fits-all education is evolving. Discover how personalized learning approaches adapt to each child's unique pace, interests, and learning style, leading to deeper understanding and genuine academic confidence. Learn practical strategies to implement this approach at home.</p>
         </div>
       </article>
 
-      <!-- Regular Blog Posts -->
       <article class="blog-card" data-category="study-tips">
-        <div class="blog-image">🧠</div>
+        <div class="blog-image">🎯</div>
         <div class="blog-content">
           <div class="blog-meta">
             <span class="blog-category">Study Tips</span>
-            <span class="blog-date">📅 June 3, 2025</span>
+            <span class="blog-date">📅 October 28, 2025</span>
           </div>
-          <h3 class="blog-title">10 Proven Memory Techniques for Better Learning</h3>
-          <p class="blog-excerpt">Discover scientifically-backed memory techniques that can transform how students retain and recall information. From the method of loci to spaced repetition.</p>
-         
-        </div>
-      </article>
-
-      <article class="blog-card" data-category="technology">
-        <div class="blog-image">💻</div>
-        <div class="blog-content">
-          <div class="blog-meta">
-            <span class="blog-category">Technology</span>
-            <span class="blog-date">📅 June 1, 2025</span>
-          </div>
-          <h3 class="blog-title">Digital Tools That Enhance Remote Learning</h3>
-          <p class="blog-excerpt">Explore the latest educational technology tools that make online learning more engaging and effective for students of all ages.</p>
-          
+          <h3 class="blog-title">Active Learning Techniques That Actually Work</h3>
+          <p class="blog-excerpt">Move beyond passive reading and note-taking. Explore evidence-based active learning methods like the Feynman Technique, retrieval practice, and interleaved study that boost retention and understanding.</p>
         </div>
       </article>
 
       <article class="blog-card" data-category="parenting">
-        <div class="blog-image">👨‍👩‍👧‍👦</div>
+        <div class="blog-image">💪</div>
         <div class="blog-content">
           <div class="blog-meta">
             <span class="blog-category">Parenting</span>
-            <span class="blog-date">📅 May 29, 2025</span>
+            <span class="blog-date">📅 October 25, 2025</span>
           </div>
-          <h3 class="blog-title">Supporting Your Child's Learning at Home</h3>
-          <p class="blog-excerpt">Practical strategies for parents to create a supportive learning environment and maintain motivation during challenging academic periods.</p>
-          
+          <h3 class="blog-title">Building Academic Resilience in Children</h3>
+          <p class="blog-excerpt">Help your child develop the mental fortitude to overcome academic challenges. Practical advice on fostering a growth mindset, handling setbacks constructively, and building lasting confidence.</p>
         </div>
       </article>
 
-      <article class="blog-card" data-category="study-tips">
-        <div class="blog-image">⏰</div>
+      <article class="blog-card" data-category="curriculum">
+        <div class="blog-image">📖</div>
         <div class="blog-content">
           <div class="blog-meta">
-            <span class="blog-category">Study Tips</span>
-            <span class="blog-date">📅 May 27, 2025</span>
+            <span class="blog-category">Curriculum</span>
+            <span class="blog-date">📅 October 22, 2025</span>
           </div>
-          <h3 class="blog-title">Time Management Skills for Academic Success</h3>
-          <p class="blog-excerpt">Master the art of time management with proven techniques that help students balance academics, extracurriculars, and personal time effectively.</p>
-          
+          <h3 class="blog-title">Understanding Kenya's Competency-Based Curriculum (CBC)</h3>
+          <p class="blog-excerpt">A comprehensive guide to CBC's learning areas, assessment methods, and how to support your child's journey through this modern educational framework designed for 21st-century skills.</p>
         </div>
       </article>
 
       <article class="blog-card" data-category="homeschool">
-        <div class="blog-image">🏠</div>
+        <div class="blog-image">📅</div>
         <div class="blog-content">
           <div class="blog-meta">
             <span class="blog-category">Homeschooling</span>
-            <span class="blog-date">📅 May 25, 2025</span>
+            <span class="blog-date">📅 October 19, 2025</span>
           </div>
-          <h3 class="blog-title">Creating Effective Learning Spaces at Home</h3>
-          <p class="blog-excerpt">Design tips and strategies for setting up dedicated learning areas that promote focus, creativity, and academic achievement in your home.</p>
-          
+          <h3 class="blog-title">Creating an Effective Homeschool Schedule</h3>
+          <p class="blog-excerpt">Structure meets flexibility: Learn how to design a homeschool routine that balances academic rigor with the freedom to explore interests, maintain family time, and prevent burnout.</p>
         </div>
       </article>
 
-      <article class="blog-card" data-category="technology">
-        <div class="blog-image">📱</div>
+      <article class="blog-card" data-category="study-tips">
+        <div class="blog-image">🧩</div>
         <div class="blog-content">
           <div class="blog-meta">
-            <span class="blog-category">Technology</span>
-            <span class="blog-date">📅 May45, 2025</span>
+            <span class="blog-category">Study Tips</span>
+            <span class="blog-date">📅 October 16, 2025</span>
           </div>
-          <h3 class="blog-title">Educational Apps That Make Learning Fun</h3>
-          <p class="blog-excerpt">A curated list of the best educational apps for different age groups, featuring interactive content that engages students while building knowledge.</p>
-          
+          <h3 class="blog-title">Making Math Fun: Games and Real-World Applications</h3>
+          <p class="blog-excerpt">Transform math anxiety into math enthusiasm. Creative approaches to teaching mathematical concepts through engaging activities, puzzles, and everyday problem-solving scenarios.</p>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="parenting">
+        <div class="blog-image">🗣️</div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-category">Parenting</span>
+            <span class="blog-date">📅 October 13, 2025</span>
+          </div>
+          <h3 class="blog-title">The Power of Positive Communication in Learning</h3>
+          <p class="blog-excerpt">Words matter. Discover how to use encouraging language that motivates rather than pressures, celebrates effort over perfection, and builds a love for learning that lasts a lifetime.</p>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="homeschool">
+        <div class="blog-image">🏡</div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-category">Homeschooling</span>
+            <span class="blog-date">📅 October 10, 2025</span>
+          </div>
+          <h3 class="blog-title">Socialization in Homeschooling: Myths vs. Reality</h3>
+          <p class="blog-excerpt">Address common concerns about homeschool socialization and explore how homeschooled children often develop stronger social skills through diverse, real-world interactions and community involvement.</p>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="curriculum">
+        <div class="blog-image">🌍</div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-category">Curriculum</span>
+            <span class="blog-date">📅 October 7, 2025</span>
+          </div>
+          <h3 class="blog-title">Integrating STEM Learning Into Everyday Life</h3>
+          <p class="blog-excerpt">Science, Technology, Engineering, and Math aren't just classroom subjects. Practical ways to weave STEM concepts into cooking, gardening, building projects, and daily routines.</p>
         </div>
       </article>
 
     </div>
 
-    <!-- Pagination -->
     <div class="pagination">
       <button disabled>← Previous</button>
       <button class="active">1</button>
@@ -759,12 +732,10 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Crestfield Tuition & Homeschool. All rights reserved.</p>
   </footer>
 
- <!-- WhatsApp Floating Button - FIXED with proper SVG icon -->
   <a href="https://wa.me/254758219179?text=Hello%20Crestfield!%20I%27m%20interested%20in%20learning%20more%20about%20your%20programs." class="whatsapp-float" target="_blank">
     <svg class="whatsapp-icon" viewBox="0 0 24 24">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
@@ -772,17 +743,13 @@
   </a>
 
   <script>
-    // Category Filter Functionality
     const categoryBtns = document.querySelectorAll('.category-btn');
     const blogCards = document.querySelectorAll('.blog-card');
     const searchInput = document.getElementById('searchInput');
 
-    // Category filtering
     categoryBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        // Remove active class from all buttons
         categoryBtns.forEach(b => b.classList.remove('active'));
-        // Add active class to clicked button
         btn.classList.add('active');
         
         const category = btn.dataset.category;
@@ -805,7 +772,6 @@
       });
     });
 
-    // Search functionality
     searchInput.addEventListener('input', (e) => {
       const searchTerm = e.target.value.toLowerCase();
       
@@ -830,36 +796,12 @@
       });
     });
 
-    // Add click handlers to blog cards
     blogCards.forEach(card => {
-      card.addEventListener('click', (e) => {
-        if (!e.target.classList.contains('read-more')) {
-          const readMoreLink = card.querySelector('.read-more');
-          if (readMoreLink) {
-            // In a real implementation, this would navigate to the full article
-            console.log('Navigate to article:', card.querySelector('.blog-title').textContent);
-          }
-        }
+      card.addEventListener('click', () => {
+        console.log('Article clicked:', card.querySelector('.blog-title').textContent);
       });
     });
 
-    
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    // Add loading animation for blog cards
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -874,7 +816,6 @@
       });
     }, observerOptions);
 
-    // Observe all blog cards for animation
     blogCards.forEach(card => {
       card.style.opacity = '0';
       card.style.transform = 'translateY(30px)';
@@ -882,18 +823,14 @@
       observer.observe(card);
     });
 
-    // Pagination functionality
     const paginationBtns = document.querySelectorAll('.pagination button');
     paginationBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         if (!btn.disabled && !btn.classList.contains('active')) {
-          // Remove active class from current page
           document.querySelector('.pagination .active').classList.remove('active');
-          // Add active class to clicked page
           if (!btn.textContent.includes('Previous') && !btn.textContent.includes('Next')) {
             btn.classList.add('active');
           }
-          // Scroll to top of blog section
           document.querySelector('.blog-section').scrollIntoView({
             behavior: 'smooth',
             block: 'start'
@@ -902,14 +839,6 @@
       });
     });
 
-    // Auto-hide search results when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.search-box')) {
-        // Reset search if needed
-      }
-    });
-
-    // Add keyboard navigation for accessibility
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         searchInput.value = '';
@@ -917,18 +846,16 @@
       }
     });
 
-    // Dynamic year update in footer
     const currentYear = new Date().getFullYear();
     const footerText = document.querySelector('footer p');
     if (footerText) {
       footerText.innerHTML = footerText.innerHTML.replace('2025', currentYear);
     }
 
-    // Add reading time estimation
     blogCards.forEach(card => {
       const excerpt = card.querySelector('.blog-excerpt').textContent;
       const wordCount = excerpt.split(' ').length;
-      const readingTime = Math.ceil(wordCount / 200); // Average reading speed
+      const readingTime = Math.ceil(wordCount / 200);
       
       const meta = card.querySelector('.blog-meta');
       const readingTimeSpan = document.createElement('span');
@@ -939,4 +866,4 @@
   </script>
 
 </body>
-</html>
+</html
